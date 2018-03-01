@@ -12,7 +12,6 @@ html {
 	font-size: 62.5%;
 }
 
-
 body {
 	@include v(font-size, body);
 	@include v(font-family, body);
@@ -22,4 +21,48 @@ body {
 	@include v(color, text);
 }
 
+.layout {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 2rem auto 2rem;
+	grid-template-rows: 8rem 6rem auto 0rem;
+	grid-row-gap: 4rem;
+
+	@include from-to-breakpoint(tablet-portrait, tablet-landscape) {
+		grid-template-columns: auto 72rem auto;
+		grid-template-rows: 16rem 6rem auto 0rem;
+	}
+	
+	@include from-breakpoint(tablet-landscape) {
+		grid-template-columns: auto 100.4rem auto;
+		grid-template-rows: 20rem 6rem auto 0rem;
+	}
+
+	@include from-breakpoint(desktop) {
+		grid-template-columns: auto 128rem auto;
+	}
+}
+
+header {
+	@include grid-col(1,-1);
+	@include grid-row(1,1);
+	display: flex;
+}
+
+.grid-container {
+	margin: 0 auto;
+	width: 100%;
+
+	@include from-to-breakpoint(tablet-portrait, tablet-landscape) {
+		max-width: 72rem;
+	}
+	
+	@include from-to-breakpoint(tablet-landscape, desktop) {
+		max-width: 100.4rem;
+	}
+
+	@include from-breakpoint(desktop) {
+		max-width: 128rem;
+	}
+}
 @import "_header.scss";

@@ -1,0 +1,28 @@
+header {
+	background-color: lighten($gray, 45%);
+	border-bottom: 1px solid var(--color-border-light);
+
+	[class^="icon"] {
+		width: 5rem;
+		height: 5rem;
+		margin: 0 3rem 0em 0;
+
+		@include from-breakpoint(tablet-portrait) {
+			width: 9rem;
+			height: 9rem;
+			margin: 0 3rem .5em 0;
+		}
+	}
+	
+	.grid-container {
+		display: flex;
+		height: 100%;
+		align-items: flex-end;
+		padding:0 2rem .5rem;
+		box-sizing: border-box;
+
+		@include from-breakpoint(tablet-portrait) {
+			padding:0 0 2rem;
+		}
+	}
+}

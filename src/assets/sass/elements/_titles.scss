@@ -1,0 +1,29 @@
+h1,
+h2,
+h3,
+h4 {
+	@include v(line-height, heading);
+	@include v(font-family, heading);
+	@include v(font-weight, heading);
+	margin:0;
+}
+
+h1 { @include v(font-size, h1); }
+h2 { @include v(font-size, h2); }
+h3 { @include v(font-size, h3); }
+h4 { @include v(font-size, h4); }
+
+.title--huge {
+	font-weight: 100;
+	font-size: 4rem;
+	
+	@include from-breakpoint(tablet-portrait) {
+		font-size: 6rem;
+	}
+	
+}
+
+.sub-title {
+	display: block;
+	font-size: 1.6rem;
+}

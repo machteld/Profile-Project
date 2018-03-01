@@ -1,11 +1,16 @@
 <template lang="pug">
 	.layout
-		p A New Vue Project
+		app-header
 </template>
 
-<script>export default {
+<script>
+import Header from './components/Header.vue';
+
+export default {
 	name: 'App',
-	
+	components: {
+		appHeader: Header,
+	},
 	data: function() {
 		return {
 			
