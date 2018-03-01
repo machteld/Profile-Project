@@ -1,0 +1,25 @@
+*:not(svg) {
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	@include v(font-size, body);
+	@include v(font-family, body);
+	@include v(font-weight, body);
+	@include v(line-height, body);
+	@include v(background-color, bodybg);
+	@include v(color, text);
+}
+
+@import "_header.scss";

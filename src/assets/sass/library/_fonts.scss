@@ -1,0 +1,50 @@
+//USAGE fonts
+
+/* 
+	fonts mixins are introduced to increase the flexibility of changing variables
+	and a shorthand for font-family, font-weight and font-size on one line.
+	
+	font families and related font weights are defined in settings/fonts 
+
+	@include font(default, 1.4rem);
+
+	will output for example:
+
+	font-family: "MrsEavesEaglesXL";
+	font-weight: 400;
+	font-size: 1.4rem;
+
+*/
+
+
+@mixin font($type: default, $size: 0) {
+
+	/* define type */
+
+	@if map-has-key($font-family, $type) {
+		font-family: map-get($font-family, $type);
+	}
+	@else if map-has-key($font-family, default) {
+		@warn "font-family type: "+ $type +" is not available in settings/fonts";
+		font-family: map-get($font-family, default);
+	}
+
+	/* define size */
+	@if $size != 0 {
+		font-size: $size;
+	}
+
+	@include font-weight($type);
+}
+
+@mixin font-weight($type: default) {
+
+	/* define font-weight */
+
+	@if map-has-key($font-weight, $type) {
+		font-weight: map-get($font-weight, $type);
+	}
+	@else {
+		@warn "font-weight is not defined for this font-family type: " + $type + " in settings/fonts";
+	}
+}

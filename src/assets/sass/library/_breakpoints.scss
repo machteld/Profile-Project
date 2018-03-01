@@ -1,0 +1,79 @@
+//USAGE breakpoints:
+/*
+//available breakpoints key value pairs can be found and set in settings/breakpoints.scss
+
+examples:
+@include from-breakpoint(desktop) {
+	property: value;
+}
+@include to-breakpoint(tablet-portrait) {
+	property: value;
+}
+@include from-to-breakpoint(tablet-portrait, tablet-landscape) {
+	property: value;
+}
+*/
+
+@function get-breakpoint($key, $to:false) {
+	@if not map-has-key($breakpoints, $key) {
+		@if is-number($key) {
+			@if $to == true {
+				@return $key - 1 + px;
+			}
+			@return $key * 1px;
+		}
+		@else {
+			@error $key +" does not exist as breakpoint key and is no valid number";
+		}
+	}
+	@else if $to == true {
+		@return (map-get($breakpoints, $key) - 1) + px;
+	}
+	@return map-get($breakpoints, $key) + px;
+}
+
+@mixin from-breakpoint($start-point) {
+	@media (min-width: get-breakpoint($start-point)) { 
+		@content; 
+	}
+}
+
+@mixin from-to-breakpoint($start-point, $end-point) {
+	@media (min-width: get-breakpoint($start-point)) and (max-width: get-breakpoint($end-point, true))  { 
+		@content; 
+	}
+}
+
+@mixin to-breakpoint($end-point) {
+	@media (max-width: get-breakpoint($end-point, true)) { 
+		@content; 
+	}
+}
+
+/* below is used for javascript responsive handler purposes */
+
+html:before {
+	display: none;
+}
+
+@for $i from 1 through length($breakpoints) {
+
+	$from: nth(nth($breakpoints, $i), 1); 
+
+	@if $i < length($breakpoints) {
+		$to: nth(nth($breakpoints, $i+1), 1);
+
+		@include from-to-breakpoint($from, $to) {
+			html:before {
+	 			content: quote($from);
+	 		}
+		}
+	}
+	@else {
+		@include from-breakpoint($from) {
+			html:before {
+	 			content: quote($from);
+	 		}
+		}
+	}
+}

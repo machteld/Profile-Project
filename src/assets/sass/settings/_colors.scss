@@ -1,0 +1,25 @@
+$black: #333;
+$red: #f00;
+$yellow: #FAB434;
+$dark: #4D5F6C;
+$gray: #607C86;
+$gray-light:#f5f0ef;
+$offwhite: #fdfdfd; 
+
+$colors: (
+	base: $dark,
+	brand: $gray,
+	primary: $yellow,
+	text: $dark,
+	text-diap: $offwhite,
+	text-light: $gray,
+	icon: $dark,
+	bodybg: $offwhite,
+	item-bg: $gray,
+	border: lighten($gray, 15%),
+	border-light: darken($offwhite, 10%),
+	button-hover: $yellow,
+	button-text: $offwhite,
+	warn: $yellow,
+	error: $red
+);

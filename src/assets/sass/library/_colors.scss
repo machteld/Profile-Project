@@ -1,0 +1,10 @@
+
+@function color($key, $opacity: 1) {
+
+	@if not map-has-key($colors, $key) {
+		@warn "Color key: "+ $key +" not found in settings/colors.";
+	}
+
+	$hex: map-get($colors, $key);
+	@return rgba($hex, $opacity);
+}
