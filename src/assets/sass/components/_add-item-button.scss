@@ -1,0 +1,11 @@
+.add-item-button {
+	@include grid-col(2,2);
+	@include grid-row(2,2);
+	display: flex;
+
+	.btn {
+		width: auto;
+		height: 100%;
+		margin-left: auto;
+	}
+}
