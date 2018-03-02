@@ -1,0 +1,27 @@
+.form-field--select {
+	margin-top: 2rem;
+	label {
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			background-image: url("/src/assets/svg/chevron-right.svg");
+			height: 2rem;
+			width: 2rem;
+			transform: rotate(90deg);
+			right: 2rem;
+			top: 4.5rem;
+			pointer-events: none;
+		}
+	}
+	> select {
+		width: 100%;
+		padding: 1rem 1.2rem;
+		border: 2px solid color(border);
+		margin-top: 1rem;
+		border-radius: 0;
+		background-color: transparent;
+		-webkit-appearance: none;
+	}
+}

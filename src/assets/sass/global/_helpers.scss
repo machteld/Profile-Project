@@ -1,0 +1,13 @@
+[hidden] { // If you want to hide content visually and from screen readers, use the hidden attribute.
+	display: none;
+ }
+ 
+ .-hidden {
+     opacity: 0;
+     visibility: hidden;
+ }
+
+ .-active {
+	 opacity: 1;
+	 visibility: visible;
+ }

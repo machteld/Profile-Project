@@ -1,0 +1,54 @@
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 20vh 0 10vw;
+	z-index: -1;
+	display: flex;
+	opacity: 0;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	transform: scale(0.9);
+	transition: transform 0.5s, opacity 0.5s, visibility 0s 2s, z-index 0s 1s;
+
+	&.-open {
+		background-color: rgba($gray, .9);
+		z-index: 1000;
+		opacity: 1;
+		pointer-events: all;
+		visibility: visible;
+		transform: scale(1);
+		transition: transform 0.5s, opacity .5s;
+	}
+
+	.close {
+		@include v(color, button-text);
+	}
+
+	&__body {
+		background-color: $dark;
+		padding: 2em;
+		max-width: 80vw;
+		width: 100%;
+	
+		@include from-breakpoint(tablet-landscape) {
+			padding: 4em;
+			width: 68rem;
+		}
+	
+		form {
+			max-width: 60rem;
+			display: flex;
+			flex-direction: column;
+			align-self: center;
+		}
+	
+		.btn {
+			align-self: flex-end;
+		}
+	}
+}
+
