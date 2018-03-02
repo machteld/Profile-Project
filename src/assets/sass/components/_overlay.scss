@@ -24,10 +24,6 @@
 		transition: transform 0.5s, opacity .5s;
 	}
 
-	.close {
-		@include v(color, button-text);
-	}
-
 	&__body {
 		background-color: $dark;
 		padding: 2em;
@@ -48,6 +44,39 @@
 	
 		.btn {
 			align-self: flex-end;
+		}
+	}
+
+	&__details {
+
+		&.-open {
+			background-color: $offwhite;
+		}
+
+		.item {
+			margin: 10rem;
+		}
+
+		.item__img {
+			max-width: 30rem;
+		}
+
+		.item__body {
+			@include from-breakpoint(tablet-landscape) {
+				margin-top: -15rem;
+			}
+		}
+
+		.close {
+			svg {
+				--color-icon: $dark;
+			}
+
+			&:hover {
+				svg {
+					--color-icon: $yellow;
+				}
+			}
 		}
 	}
 }

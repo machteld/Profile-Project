@@ -1,5 +1,5 @@
 <template lang="pug">
-	.overlay(v-bind:class="{ 'new-item__overlay -open': isActive }")
+	.overlay(v-bind:class="{ 'overlay__form -open': isActive }")
 		button(class="close" @click="closeOverlay")
 			svg(class="icon-x")
 				use(class="icon-x" xlink:href="src/assets/symbol-defs.svg#icon-x")

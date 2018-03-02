@@ -48,13 +48,13 @@
     		width: 50%;
 		}
 		
-		img {
-			object-fit: cover;
-			border-radius: 100%;
-			height: 100%;
-			width: 100%;
-			border-radius: 100%;
-		}
+		// img {
+		// 	object-fit: cover;
+		// 	border-radius: 100%;
+		// 	height: 100%;
+		// 	width: 100%;
+		// 	border-radius: 100%;
+		// }
 	}
 
 	
@@ -84,15 +84,6 @@
 		}
 	}
 
-	// &:nth-of-type(4n+2){
-	// 	--color-item-bg: $gray;
-	// 	.grid-item__img {
-	// 		&:before {
-	// 			--color-item-bg: $gray;
-	// 		}
-	// 	}
-	// }
-
 	&:nth-of-type(4n+3){
 		--color-item-bg: $dark;
 
@@ -105,5 +96,11 @@
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	.overlay & {
+		&:hover {
+			cursor: auto;
+		}
 	}
 }

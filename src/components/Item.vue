@@ -1,8 +1,8 @@
 <template lang="pug">
 	.grid
-		template(v-for="(item, index) in items" :data-index="index")
+		template(v-for="(item, index) in items" )
 			transition(name="fade" appear v-on:enter="enter")
-				.item()
+				.item(:data-index="index" @click="toggleDetails(item)")
 					.item__img(v-if="item.selectedIcon !== ' '" )
 						svg(:class="'icon-' + item.selectedIcon")
 							use(:xlink:href="'/src/assets/symbol-defs.svg#icon-' + item.selectedIcon")
@@ -41,7 +41,14 @@ export default {
 		deleteItem(index) {
 			this.$emit('itemDeleted', index);
 		},
-		enter: function (el, done) {
+		toggleDetails(item) {
+			itemBus.$emit('detailToggled', item);
+		},
+		closeOverlay() {
+			this.isActive = false;
+		},
+		enter: function (el) {
+			console.log('enter');
 			var delay = el.dataset.index * 250;
 			el.style.setProperty('--delay', delay + 'ms');
 		},

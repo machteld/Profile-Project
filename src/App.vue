@@ -3,6 +3,7 @@
 		app-header
 		app-add-item-button
 		app-item(:items="items" @itemDeleted="deleteItem")
+		app-item-detail
 		app-form(:items="items" @itemAdded="newItem")
 </template>
 
@@ -11,6 +12,7 @@ import Header from './components/Header.vue';
 import AddItem from './components/AddItemButton.vue';
 import Item from './components/Item.vue';
 import Form from './components/Form.vue';
+import ItemDetail from './components/ItemDetail.vue';
 
 export default {
 	name: 'App',
@@ -19,6 +21,7 @@ export default {
 		appAddItemButton: AddItem,
 		appItem: Item,
 		appForm: Form,
+		appItemDetail: ItemDetail
 	},
 	data: function() {
 		return {
