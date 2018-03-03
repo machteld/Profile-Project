@@ -2,8 +2,8 @@
 	.layout
 		app-header
 		app-add-item-button
-		app-item(:items="items" @itemDeleted="deleteItem")
-		app-item-detail
+		app-item(:items="items")
+		app-item-detail(@itemEdited="editItem" @itemDeleted="deleteItem")
 		app-form(:items="items" @itemAdded="newItem")
 </template>
 
@@ -70,6 +70,9 @@ export default {
 		},
 		newItem(item) {
 			this.items.push(item);
+		},
+		editItem(item) {
+			this.$set(this.items, item.index, item);
 		},
 		deleteItem(index) {
 			this.items.splice(index, 1);

@@ -1,20 +1,13 @@
 .close {
 	align-self: flex-end;
 	display: block;
-	margin-top: -6em;
-	margin-right: 2em;
 	outline: none;
 	background: transparent;
 	border: none;
 
-	@include from-breakpoint(tablet-landscape) {
-		margin-top: -4em;
-		margin-right: 4em;
-	}
-
 	svg {
 		@include v(color, icon);
-		--color-icon: $offwhite;
+		--color-icon: $gray;
 		width: 4rem;
 		height: 4rem;
 	}

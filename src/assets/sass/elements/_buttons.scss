@@ -103,6 +103,48 @@
 		}
 	}
 
+	&.-edit {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 6rem;
+		height: 6rem;
+		overflow: hidden;
+		transition: width .3s, border-radius 0s 1s;
+
+		svg {
+			transform: scale(1);
+			margin-right: auto;
+			transition: transform 1s ease-in-out;
+		}
+		span {
+			opacity: 0;
+			width: 0;
+			visibility: hidden;
+			transform: translateX(-100%);
+		}
+
+		&:hover {
+			width: 17rem;
+			height: 6rem;
+			border-radius: 3rem;
+			transition: width 1s;
+
+			svg {
+				transform: scale(.75);
+				transition: transform .5s;
+			}
+
+			span {
+				opacity: 1;
+				width: 100%;
+				transform: translateX(0rem);
+				visibility: visible;
+				transition:  transform .9s, opacity .5s .4s;
+			}
+		}
+	}
+
 
 	//don't use (var --color), the var is already defined in the svg, just change the color value of the defined variable
 	// svg use {

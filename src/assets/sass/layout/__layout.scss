@@ -86,4 +86,9 @@ header {
 	}
 }
 
+.overlay {
+	@include grid-col(1,-1);
+	@include grid-row(1,-1);
+}
+
 @import "_header.scss";

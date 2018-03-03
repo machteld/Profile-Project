@@ -1,5 +1,6 @@
 .item {
 	@include v(background-color, item-bg);
+	transform-origin: 0 0;
 	margin-top: 25%;
 
 	&__img {
@@ -38,8 +39,7 @@
 			color: $offwhite;
 		}
 
-		svg,
-		img {
+		svg {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -47,17 +47,7 @@
 			height: auto;
     		width: 50%;
 		}
-		
-		// img {
-		// 	object-fit: cover;
-		// 	border-radius: 100%;
-		// 	height: 100%;
-		// 	width: 100%;
-		// 	border-radius: 100%;
-		// }
 	}
-
-	
 
 	&__body {
 		@include v(color, text-diap);
@@ -75,7 +65,7 @@
 		}
 	}
 
-	&:nth-of-type(4n+1){
+	&.color1{
 		--color-item-bg: $yellow;
 		.grid-item__img {
 			&:before {
@@ -84,7 +74,16 @@
 		}
 	}
 
-	&:nth-of-type(4n+3){
+	&.color2{
+		--color-item-bg: $gray;
+		.grid-item__img {
+			&:before {
+				--color-item-bg: $gray;
+			}
+		}
+	}
+
+	&.color3{
 		--color-item-bg: $dark;
 
 		.grid-item__img {
@@ -99,8 +98,16 @@
 	}
 
 	.overlay & {
+
 		&:hover {
 			cursor: auto;
 		}
+	}
+
+	&__edit {
+		background-color: $gray;
+		width: 100%;
+		padding: 10vh 12vw;
+		margin-top: 8rem;
 	}
 }
