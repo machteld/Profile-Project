@@ -6,7 +6,7 @@
 	z-index: 1;
 }
 legend {
-	@include v(color, text-diap);
+	@include v(color, text);
 	text-transform: uppercase;
 	font-weight: 400;
 }

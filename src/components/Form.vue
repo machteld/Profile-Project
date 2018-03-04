@@ -3,6 +3,7 @@
 		button(class="close" @click="closeOverlay")
 			svg(class="icon-x")
 				use(class="icon-x" xlink:href="src/assets/symbol-defs.svg#icon-x")
+		.overlay__bg
 		.overlay__body
 			form()
 				legend Voeg een nieuw profiel toe

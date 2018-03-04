@@ -20,7 +20,6 @@ h4 { @include v(font-size, h4); }
 	@include from-breakpoint(tablet-portrait) {
 		font-size: 6rem;
 	}
-	
 }
 
 .sub-title {

@@ -2,6 +2,7 @@
 	@include v(background-color, item-bg);
 	transform-origin: 0 0;
 	margin-top: 25%;
+	align-self: flex-start;
 
 	&__img {
 		display: block;
@@ -61,7 +62,15 @@
 			+ span {
 				text-transform: uppercase;
 				@include v(font-size, small);
+
+				.overlay & {
+					--font-size-small: 1.4rem;
+				}
 			}
+		}
+
+		.title {
+			@include v(font-size, big);
 		}
 	}
 
