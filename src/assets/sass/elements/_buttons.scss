@@ -1,59 +1,63 @@
 .btn {
 	@include v(color, button-text);
 	@include v(font-size, button);
-	@include v(border-color, border);
-	background: transparent;
-	display: inline-block;
-	padding: 1.2rem 1.7rem;
-	line-height: 1.8rem;
-	border-width: 2px;
-	border-style: solid;
-	border-radius: 2px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 6rem;
+	height: 6rem;
+	overflow: hidden;
+	border: none;
+	background-color: $dark;
+	border-radius: 100%;
+	padding: 1.2rem 1.4rem;
 	text-decoration: none;
 	cursor: pointer;
-	transition: border-color .3s ease, color .3s ease;
+	transition: width .3s, border-radius 0s 1s, border-color .3s ease, color .3s ease;
 
-	&:hover:not(:disabled) {
-		--color-button-text: color(button-hover);
-		--color-border: color(button-hover);
+	svg {
+		--color-icon:color(button-text);
+		transform: scale(1);
+		margin-right: auto;
+		transition: transform 1s;
+		position: absolute;
+		left:1.4rem;
+		top: 1.4rem;
+	}
+
+	span {
+		opacity: 0;
+		width: 0;
+		visibility: hidden;
+		transform: translateX(-100%);
+	}
+
+	&:hover {
+		--color-button-text: $yellow;
+		width: 18rem;
+		height: 6rem;
+		border-radius: 3rem;
+		transition: width .5s;
 
 		svg {
-			--color-icon: color(button-hover);
+			--color-icon: $yellow;
+			transform: scale(.75);
+			transition: transform 1s ease 0s;
 		}
-	}
 
-	&:disabled {
-		--color-button-text: lighten(color(base), 30%);
-		--color-base:lighten(color(base), 30%);
-		--color-border:lighten(color(base), 30%);
-		cursor: default;
-	}
-
-	&__primary {
-		border-color: color(primary);
-		color: white;
-		background-color: color(primary);
-	
-		&:disabled,
-		&.-disabled {
-			background-color: color(primary);
-			border-color: color(primary);
+		span {
+			opacity: 1;
+			width: 100%;
+			transform: translateX(1.4rem);
+			visibility: visible;
+			transition:  transform .8s -.3s, opacity .3s .2s;
 		}
 	}
 
 	&__submit {
-		position: relative;
-		padding-left: 4em;
 
 		svg {
 			--color-icon:color(button-text);
-			margin-left: 1rem;
-			position: absolute;
-			left: .75rem;
-			width: 2rem;
-			height: 2rem;
-			border-right: 1px solid rgba(color(button-text), .4);
-			padding-right: .75em;
 			transition: opacity .3s;
 		
 			&:last-of-type {
@@ -62,17 +66,17 @@
 		}
 
 		&:disabled {
-					
-			svg {
-				--color-icon: lighten(color(base), 30%);
-				border-right-color: lighten(color(base), 20%);
-			}
+			--color-button-text: lighten(color(base), 30%);
+			--color-base:lighten(color(base), 30%);
+			cursor: default;
 		}
 
 		&:hover:not(:disabled) {
-
+			--color-button-text: color(button-hover);
+			--color-border: color(button-hover);
+	
 			svg {
-				border-right-color: rgba(color(button-hover), .4);
+				--color-icon: color(button-hover);
 
 				&:first-of-type {
 					opacity: 0;
@@ -85,25 +89,8 @@
 		}
 	}
 
-	&--round {
-		border: none;
-		background-color: $dark;
-		border-radius: 100%;
-		padding: 1.2rem 1.4rem;
-		
-		svg {
-			--color-icon:color(button-text);
-		}
 
-		&:hover {
-
-			svg {
-				--color-icon: lighten(color(base), 30%);
-			}
-		}
-	}
-
-	&.-edit {
+	&.-editt {
 		position: relative;
 		display: flex;
 		align-items: center;

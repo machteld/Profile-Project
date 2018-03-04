@@ -29,7 +29,7 @@
 						use(class="icon-user-plus" xlink:href="src/assets/symbol-defs.svg#icon-user-plus")
 					svg(class="icon-user-check")
 						use(class="icon-user-check" xlink:href="src/assets/symbol-defs.svg#icon-user-check")
-					| Opslaan
+					span Opslaan
 </template>
 
 <script>

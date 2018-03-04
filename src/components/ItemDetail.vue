@@ -1,5 +1,5 @@
 <template lang="pug">
-	.overlay(:class="{ 'overlay__details -open': isActive }")
+	.overlay.overlay__details(:class="{ '-open': isActive }")
 		button(class="close" @click="closeOverlay")
 			svg(class="icon-x")
 				use(class="icon-x" xlink:href="src/assets/symbol-defs.svg#icon-x")

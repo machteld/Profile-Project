@@ -1,4 +1,5 @@
 .overlay {
+	background-color: $offwhite;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
@@ -7,8 +8,7 @@
 	flex-direction: column;
 	align-items: center;
 	visibility: hidden;
-	transform: scale(0.9);
-	transition: transform 0.5s, opacity 0.5s, visibility 0s 2s, z-index 0s 1s;
+	transition: opacity 0.5s, visibility 0s 2s, z-index 0s 1s;
 
 	.close {
 		margin-top: 2em;
@@ -22,14 +22,16 @@
 	}
 
 	&__bg {
-		width: 0;
+		width: 100%;
+		height: 100%;
 		background-color: $gray;
 		position: fixed;
 		z-index: -1;
 		left: 0;
 		top: 11rem;
 		transform: translateX(100%);
-		transition: transform 1s ease;
+		visibility: visible;
+		transition: transform .3s ease, width 0.5s ,visibility 0s 1s;
 	}
 
 	&__body {
@@ -37,17 +39,24 @@
 		width: 100%;
 		display: flex;
 		justify-content: center;
+		opacity: 0;
 	
 		@include from-breakpoint(tablet-landscape) {
+			margin-top: -10rem;
 			padding: 4em;
 			width: 68rem;
 		}
 	
 		form {
-			flex: 0 1 60rem;
-			max-width: 60rem;
+			width: 100%;
+			max-width: 80vw;
 			display: flex;
 			flex-direction: column;
+
+			@include from-breakpoint(tablet-landscape) {
+				flex: 0 1 60rem;
+				max-width: 60rem;
+			}
 		}
 
 		legend {
@@ -62,12 +71,12 @@
 	&__details {
 
 		.item {
+			opacity: 0;
 			background: transparent;
 			align-self: center;
 			margin-top: 4rem;
 
 			@include from-breakpoint(tablet-portrait) {
-				//padding: 0 10vw 6vw;
 				max-width: 70rem;
 			}
 		}
@@ -102,13 +111,12 @@
 	}
 
 	&.-open {
-		background-color: $offwhite;
 		z-index: 1000;
 		position: fixed;
 		opacity: 1;
 		pointer-events: all;
 		visibility: visible;
-		transform: scale(1);
+		//transform: scale(1);
 		transition: transform 0.5s, opacity .3s;
 	
 		.overlay__bg {
@@ -116,7 +124,13 @@
 			height: 100%;
 			transform: translateX(0);
 			opacity: 1;
-			transition: opacity .3s,transform .3s ease-in ;
+			visibility: visible;
+			transition: transform .3s ease-in;
+		}
+
+		.overlay__body,
+		.item {
+			opacity: 1;
 		}
 	}
 }
