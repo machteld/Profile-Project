@@ -57,7 +57,9 @@ export default {
 			this.isActive = false;
 		},
 		focusFn(e) {
-			let el = e.target;
+			let el = e.target,
+				submitBtn = document.getElementById('form-btn');
+
 			if( el.value == '' ) {
 				el.classList.toggle('input--filled');
 			}
@@ -74,8 +76,9 @@ export default {
 			}
 
 			function checkField() {
-				document.getElementById('form-btn').removeAttribute('disabled');
+				submitBtn.removeAttribute('disabled');
 			}
+
 		},
 		closeOverlay() {
 			this.isActive = false;

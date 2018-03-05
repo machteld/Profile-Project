@@ -74,7 +74,7 @@
 		}
 	}
 
-	&.color1{
+	&:nth-of-type(4n+1){
 		--color-item-bg: $yellow;
 		.grid-item__img {
 			&:before {
@@ -83,7 +83,7 @@
 		}
 	}
 
-	&.color2{
+	&:nth-of-type(4n+2){
 		--color-item-bg: $gray;
 		.grid-item__img {
 			&:before {
@@ -92,7 +92,7 @@
 		}
 	}
 
-	&.color3{
+	&:nth-of-type(4n+3){
 		--color-item-bg: $dark;
 
 		.grid-item__img {
