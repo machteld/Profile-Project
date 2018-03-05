@@ -51,6 +51,20 @@ export default {
 					name: 'Jan Franssen',
 					age: '25',
 					jobTitle: 'Junior Frontend Developer',
+					selectedIcon: 'github',
+					bio: 'Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag.'
+				},
+								{
+					name: 'Jan Visser',
+					age: '34',
+					jobTitle: 'Frontend Developer',
+					selectedIcon: 'user',
+					bio: 'Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. '
+				},
+				{
+					name: 'Jan Blokker',
+					age: '45',
+					jobTitle: 'Backend Developer',
 					selectedIcon: 'gitlab',
 					bio: 'Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag.'
 				},

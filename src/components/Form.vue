@@ -24,7 +24,7 @@
 					textarea(class="form-field" rows="3" class="input-field" v-on:focus="focusFn" v-model="item.bio")
 					label Bio
 
-				button(class="btn btn__submit" id="form-btn" type="submit" disabled @click.prevent="newItem") 
+				button(class="btn btn__submit" id="form-btn" type="submit" disabled @click="newItem") 
 					svg(class="icon-user-plus")
 						use(class="icon-user-plus" xlink:href="src/assets/symbol-defs.svg#icon-user-plus")
 					svg(class="icon-user-check")

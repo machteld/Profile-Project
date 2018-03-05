@@ -3,6 +3,11 @@
 	transform-origin: 0 0;
 	margin-top: 25%;
 	align-self: flex-start;
+	margin-bottom: 2rem;
+
+	@include from-breakpoint(tablet-portrait) {
+		
+	}
 
 	&__img {
 		display: block;
@@ -70,7 +75,11 @@
 		}
 
 		.title {
-			@include v(font-size, big);
+			@include v(font-size, h1);
+
+			@include from-breakpoint(tablet-portrait) {
+				@include v(font-size, big);
+			}
 		}
 	}
 
@@ -111,12 +120,5 @@
 		&:hover {
 			cursor: auto;
 		}
-	}
-
-	&__edit {
-		background-color: $gray;
-		width: 100%;
-		padding: 10vh 12vw;
-		margin-top: 8rem;
 	}
 }
