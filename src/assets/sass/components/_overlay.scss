@@ -28,13 +28,13 @@
 		position: fixed;
 		z-index: -1;
 		left: 0;
-		top: 9rem;
+		top: 20rem;
 		transform: translateX(100%);
 		visibility: visible;
 		transition: transform .3s ease, width 0.5s ,visibility 0s 1s;
 
 		@include from-breakpoint(tablet-portrait) {
-			top: 14rem;
+			top: 30rem;
 		}
 	}
 
@@ -46,8 +46,8 @@
 		opacity: 0;
 	
 		@include from-breakpoint(tablet-portrait) {
-			margin-top: -7rem;
-			padding: 4em;
+			margin-top: 10rem;
+			padding:0 4em;
 			width: 68rem;
 		}
 	
@@ -64,7 +64,9 @@
 		}
 
 		legend {
-			margin-bottom: 3rem;
+			@include v(font-size, big);
+			line-height: 3;
+			
 		}
 	
 		.btn {
@@ -78,11 +80,12 @@
 			opacity: 0;
 			background: transparent;
 			align-self: center;
-			margin-top: 2rem;
+			display: flex;
+			//margin-top: 2rem;
 
 			@include from-breakpoint(tablet-portrait) {
-				margin-top: 4rem;
-				max-width: 70rem;
+				margin-top: 8rem;
+				max-width: 72rem;
 			}
 		}
 
@@ -90,15 +93,26 @@
 			max-width: 12rem;
 
 			@include from-breakpoint(tablet-portrait) {
-				max-width: 16rem;
+				max-width: 20rem;
+				width: 20rem;
+				height: 20rem;
+				flex: 1 0 auto;
+				transform: translateY(2rem);
 			}
 		}
 
 		.item__body {
 			margin-top: -6rem;
+			text-align: left;
 
 			@include from-breakpoint(tablet-portrait) {
-				margin-top: -8rem;
+				//margin-top: -8rem;
+				margin-top: 0;
+
+				.title {
+					color: color(text);
+					line-height: 3;
+				}
 			}
 		}
 

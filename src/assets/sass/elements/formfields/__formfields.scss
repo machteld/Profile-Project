@@ -7,8 +7,7 @@
 }
 legend {
 	@include v(color, text);
-	text-transform: uppercase;
-	font-weight: 400;
+	font-weight: 300;
 }
 label,
 .label {
@@ -16,7 +15,6 @@ label,
 	@include v(font-size, small);
 	font-weight: 300;
 	display: block;
-	text-transform: uppercase;
 }
 
 /* Form Boxes */
@@ -62,8 +60,8 @@ textarea {
 	&.input--filled {
 
 		+ label {
-			top: 0.95em;
-			color: darken(color(text-diap), 15%);
+			top: 0.7em;
+			color: darken(color(text-diap), 25%);
 			transform: translate3d(0, -1.5em, 0) scale3d(0.85, 0.85, 1);
 			//transition: transform .3s ease-in, color .2s ease-out, top .2s;
 		}

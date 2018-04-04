@@ -1,7 +1,7 @@
 .alert {
 	
 	> span {
-		@include v(color, warn);
+		@include v(color, alert);
 		display: block;
 		margin-bottom: 1rem;
 	}

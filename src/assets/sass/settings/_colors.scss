@@ -1,5 +1,6 @@
 $black: #333;
-$red: rgb(204, 31, 31);
+$red: rgb(251, 132, 58);
+$orange: rgb(245, 146, 53);
 $yellow: #FAB434;
 $dark: #4D5F6C;
 $gray: #607C86;
@@ -20,6 +21,7 @@ $colors: (
 	border-light: darken($offwhite, 10%),
 	button-hover: $yellow,
 	button-text: $offwhite,
-	warn: $yellow,
+	alert: $yellow,
+	warn: $orange,
 	error: $red
 );
